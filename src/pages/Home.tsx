@@ -41,7 +41,7 @@ const Home = () => {
         </Card>
 
         {/* PDF Upload */}
-        <Card className="p-6">
+        <Card className="p-6 flex flex-col ">
           <div className="flex items-center mb-4">
             <Upload className="h-5 w-5 text-blue-600 mr-2" />
             <h2 className="text-lg font-semibold">Upload PDF</h2>
@@ -59,6 +59,12 @@ const Home = () => {
                 : 'Drag and drop your PDF here, or click to select'}
             </p>
           </div>
+          <Button
+            onClick={() => navigate('/quiz')}
+            className="bg-blue-600 mt-3 ml-auto hover:bg-blue-700 text-white px-8 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            Take Test
+          </Button>
         </Card>
 
         {/* Summary */}
