@@ -117,7 +117,7 @@ export default function PDFUploader() {
   return (
     <div
       className={cn(
-        'mt-6 p-8 border-2 border-dashed rounded-lg transition-all duration-200',
+        'p-8 border-2 border-dashed rounded-lg transition-all duration-200 flex flex-col',
         isDragging ? 'border-blue-500 bg-blue-50' : 'border-gray-300',
         file ? 'bg-gray-50' : 'bg-white'
       )}
@@ -126,6 +126,7 @@ export default function PDFUploader() {
       onDragOver={handleDrag}
       onDrop={handleDrop}
     >
+
       <div className="flex flex-col items-center justify-center space-y-4">
         {file ? (
           <>

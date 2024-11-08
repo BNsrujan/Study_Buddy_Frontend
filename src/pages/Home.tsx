@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
+import PDFUploader from '@/components/PDFUploader';
+import Summary from '@/components/Summary';
+import TextInput from '@/components/TextInput';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,62 +26,22 @@ const Home = () => {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="space-y-6">
         {/* Text Input */}
-        <Card className="p-6 flex  flex-col  ">
-          <div className="flex items-center mb-4">
-            <FileText className="h-5 w-5 text-blue-600 mr-2" />
-            <h2 className="text-lg font-semibold">Enter Your Text</h2>
-          </div>
-          <Textarea
-            placeholder="Paste your text here..."
-            className="min-h-[150px]"
-          />
-          <Button
-            onClick={() => navigate('/quiz')}
-            className="bg-blue-600 mt-3 ml-auto hover:bg-blue-700 text-white px-8 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-          >
-            Take Test
-          </Button>
-        </Card>
-
-        {/* PDF Upload */}
-        <Card className="p-6 flex flex-col ">
+        <Card className="p-6 flex  flex-col   ">
           <div className="flex items-center mb-4">
             <Upload className="h-5 w-5 text-blue-600 mr-2" />
             <h2 className="text-lg font-semibold">Upload PDF</h2>
           </div>
-          <div
-            {...getRootProps()}
-            className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${isDragActive ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
-              }`}
-          >
-            <input {...getInputProps()} />
-            <FileQuestion className="h-12 w-12 mx-auto mb-4 text-gray-400" />
-            <p className="text-gray-600">
-              {isDragActive
-                ? 'Drop the PDF here'
-                : 'Drag and drop your PDF here, or click to select'}
-            </p>
-          </div>
-          <Button
-            onClick={() => navigate('/quiz')}
-            className="bg-blue-600 mt-3 ml-auto hover:bg-blue-700 text-white px-8 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-          >
-            Take Test
-          </Button>
+          <PDFUploader />
+
+          <TextInput />
+
         </Card>
 
+
+
+
+        <Summary />
         {/* Summary */}
-        <Card className="p-6 flex-">
-          <div className="flex items-center mb-4">
-            <FileText className="h-5 w-5 text-blue-600 mr-2" />
-            <h2 className="text-lg font-semibold">Summary</h2>
-          </div>
-          <div className="bg-gray-50 rounded-lg p-4 min-h-[100px]">
-            <p className="text-gray-500 text-center">
-              Your summary will appear here...
-            </p>
-          </div>
-        </Card>
 
         {/* Important Points */}
         <Card className="p-6">
