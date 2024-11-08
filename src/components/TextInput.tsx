@@ -54,10 +54,10 @@ export default function TextInput() {
   };
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 flex flex-col">
       <label
         htmlFor="study-text"
-        className="block text-sm font-medium text-gray-700"
+        className="block text-md font-bold text-black pb-2"
       >
         Or paste your text here
       </label>
@@ -71,7 +71,7 @@ export default function TextInput() {
       />
       <Button
         onClick={handleSubmit}
-        className="mt-4 bg-blue-500 hover:bg-blue-600 text-white"
+        className="bg-blue-600 mt-3 ml-auto hover:bg-blue-700 text-white px-8 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
       >
         Submit Text
       </Button>
